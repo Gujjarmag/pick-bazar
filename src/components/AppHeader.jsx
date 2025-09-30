@@ -33,6 +33,9 @@ function AppHeader(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Link to="/">
+        <img src={Logo} />
+      </Link>
       {/* <Typography variant="h6" sx={{ my: 2 }}>
         MUI
       </Typography> */}
@@ -67,7 +70,9 @@ function AppHeader(props) {
             >
               <MenuIcon />
             </IconButton>
-            <img src={Logo} alt="Logo" />
+            <Link to="/">
+              <img src={Logo} />
+            </Link>
 
             <Autocomplete
               disablePortal
