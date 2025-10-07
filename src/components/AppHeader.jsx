@@ -21,12 +21,15 @@ import { greenBtn } from "../assets/style";
 import { Link, NavLink } from "react-router";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import Badge from "@mui/material/Badge";
+import { useSelector } from "react-redux";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
 
 function AppHeader(props) {
   const { window } = props;
+
+  const { Products: ProductsDummyData } = useSelector((state) => state.cart);
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -104,7 +107,11 @@ function AppHeader(props) {
               Offers
             </NavLink>
             <Button>Contact</Button>
-            <Badge badgeContent={4} color="primary" className="mx-5">
+            <Badge
+              badgeContent={ProductsDummyData?.length}
+              color="primary"
+              className="mx-5"
+            >
               <ShoppingBasketIcon sx={{ color: "#019376" }} />
             </Badge>
             <Button sx={{ ...greenBtn, marginRight: "20px" }}>Join</Button>

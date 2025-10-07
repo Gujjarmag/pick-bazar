@@ -4,13 +4,17 @@ import Typography from "@mui/material/Typography";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { ProductData } from "../utils/dummyData";
+
 import Grid from "@mui/material/Grid";
 import ProductDetailModal from "./ProductDetailModal";
 import CartList from "./CartList/CartList";
+import { useSelector } from "react-redux";
 
 const Products = (props) => {
   const { SetCartProducts } = props;
+
+  const { Products: ProductsDummyData } = useSelector((state) => state.cart);
+
   const [open, setOpen] = useState(false);
   const [currentProductId, setCurrentProductId] = useState({});
 
@@ -24,7 +28,7 @@ const Products = (props) => {
     <>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={3}>
-          {ProductData?.map((product) => {
+          {ProductsDummyData?.map((product) => {
             return (
               // <Grid size={2}>
               <Card key={product.id} className="w-[345px] p-4">

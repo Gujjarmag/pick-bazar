@@ -8,8 +8,6 @@ const Home = () => {
   const [openCartList, setOpenCartList] = useState(false);
   const [cartProducts, SetCartProducts] = useState([]);
 
-  console.log(cartProducts, "cartProducts");
-
   const toggleDrawer = (newOpen) => () => {
     setOpenCartList(newOpen);
   };
