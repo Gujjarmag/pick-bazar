@@ -30,7 +30,7 @@ const Register = () => {
     resolver: yupResolver(registerSchema),
   });
 
-  const registerSumbut = (data) => {
+  const registerSumbit = (data) => {
     console.log(data);
   };
 
@@ -46,7 +46,7 @@ const Register = () => {
           </div>
         </div>
 
-        <form className="" onSubmit={handleSubmit}>
+        <form className="" onSubmit={handleSubmit(registerSumbit)}>
           <div className="flex justify-center">
             <div>
               <label>Name</label> <br />
@@ -65,7 +65,7 @@ const Register = () => {
               <Controller
                 name="email"
                 control={control}
-                render={({ field }) => <TextField id="fullWidth" />}
+                render={({ field }) => <TextField {...field} />}
               />
               <p className="text-red-500">{errors?.email?.message}</p>
             </div>

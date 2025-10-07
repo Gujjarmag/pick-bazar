@@ -19,6 +19,8 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { greenBtn } from "../assets/style";
 import { Link, NavLink } from "react-router";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import Badge from "@mui/material/Badge";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
@@ -102,6 +104,9 @@ function AppHeader(props) {
               Offers
             </NavLink>
             <Button>Contact</Button>
+            <Badge badgeContent={4} color="primary" className="mx-5">
+              <ShoppingBasketIcon sx={{ color: "#019376" }} />
+            </Badge>
             <Button sx={{ ...greenBtn, marginRight: "20px" }}>Join</Button>
             <Button sx={greenBtn}>Become Seller</Button>
           </Box>

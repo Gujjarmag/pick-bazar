@@ -7,8 +7,10 @@ import Button from "@mui/material/Button";
 import { ProductData } from "../utils/dummyData";
 import Grid from "@mui/material/Grid";
 import ProductDetailModal from "./ProductDetailModal";
+import CartList from "./CartList/CartList";
 
-const Products = () => {
+const Products = (props) => {
+  const { SetCartProducts } = props;
   const [open, setOpen] = useState(false);
   const [currentProductId, setCurrentProductId] = useState({});
 
@@ -41,6 +43,7 @@ const Products = () => {
                   </Box>
                   <Box>
                     <Button
+                      onClick={() => SetCartProducts(product)}
                       sx={{
                         borderRadius: "50px",
                         border: "1px solid #009F7F",
